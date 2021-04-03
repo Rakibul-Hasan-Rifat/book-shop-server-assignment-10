@@ -18,7 +18,7 @@ const client = new MongoClient(uri, {
 client.connect((err) => {
   const collection = client
     .db(process.env.DB_NAME)
-    .collection(process.env.DB_Collection);
+    .collection("bookShopCollection");
 
   app.get("/", (req, res) => {
     res.send("<h1>Hello World!</h1>");
