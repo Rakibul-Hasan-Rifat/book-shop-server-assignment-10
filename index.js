@@ -46,10 +46,8 @@ client.connect((err) => {
   app.get('/mongoDocs/:id', (req, res) => {
     console.log(req.params.id);
     collection.findOne({_id: ObjectId(req.params.id)})
-    .then(res => res.json())
-    .then(data => {
-      res.send(data);
-    })
+    .then(response => response.json())
+    .then(data => res.send(data))
   })
  
   app.delete('/delete/:id', (req, res) => {
